@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>登陆页面</title
+    <title>登陆页面</title>
     <link rel="stylesheet" type="text/css" href="resources/easyui/themes/default/easyui.css">
     <link  rel="stylesheet" type="text/css" href="resources/easyui/themes/icon.css">
     <link  rel="stylesheet" type="text/css" href="resources/easyui/themes/color.css">
