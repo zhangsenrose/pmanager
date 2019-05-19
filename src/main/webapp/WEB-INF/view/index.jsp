@@ -21,7 +21,7 @@
     <div data-options="region:'west',split:true" title="导航" style="width:180px;">
         <div class="easyui-accordion">
             <div title="文件管理" data-options="iconCls:'icon-ok'" style="overflow:auto;padding:10px;">
-               <a href="javascript:addTab(' 文章管理-ue','文件管理','icon-ok')" class="easyui-linkbutton"
+               <a href="javascript:addTab(' filelist','文件管理')" class="easyui-linkbutton"
                   data-options="plain:true,iconCls:'icon-ok'"
                   style="width: 150px;">查询文件</a>
             </div>
@@ -42,15 +42,14 @@
 <script type="text/javascript">
 
     /*添加tab页面*/
-  function addTab(url, text, iconCls) {
-      var content = "<iframe frameborder=0 scrolling='auto' style='width:100%;height:100%' src='login'></iframe>";
+  function addTab(url, text) {
+      var content = "<iframe frameborder=0 scrolling='auto' style='width:100%;height:100%' src='"+url+"'></iframe>";
       $("#tabs").tabs("add", {
           title: text,
           closable: true,
           content: content
       });
   }
-
 
 </script>
 </html>

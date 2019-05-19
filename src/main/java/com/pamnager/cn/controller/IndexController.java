@@ -15,5 +15,9 @@ public class IndexController {
     public String login(){
         return "login";
     }
+    @RequestMapping("filelist")
+    public String filelist(){
+        return "filelist";
+    }
 
 }
