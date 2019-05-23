@@ -27,15 +27,14 @@
 <script type="text/javascript" src="resources/easyui/jquery.easyui.min.js"></script>
 <%--addFileDialog--%>
 <div id="dlg" class="easyui-dialog" closed="true" style="width:300px;height:200px" buttons="#dialog-buttons">
-    <form id="addfileform" method="post">
+    <form id="addfileform" method="post" enctype="multipart/form-data">
         <div>
             <input type="file" name="file">
         </div>
-        <div></div>
     </form>
 </div>
 <div id="dialog-buttons">
-    <a href="#" class="easyui-linkbutton" iconCls="icon-ok">保存</a>
+    <a href="javascript:addFile()" class="easyui-linkbutton" iconCls="icon-ok">保存</a>
     <a href="javascript:closeDialog()" class="easyui-linkbutton" iconCls="icon-cancel">取消</a>
 </div>
 
@@ -59,7 +58,10 @@
         method = "POST";
     }
     function closeDialog() {
-        $("#dlg").dialog("close");ss
+        $("#dlg").dialog("close");
+    }
+    function addFile() {
+        
     }
 </script>
 </html>
