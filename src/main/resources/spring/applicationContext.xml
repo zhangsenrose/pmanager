@@ -12,11 +12,17 @@
 
 
 
+    <context:property-placeholder location="classpath:*.properties"/>
+
+
     <context:annotation-config />
-    <context:component-scan base-package="com.pamnager.cn.controller">
+    <context:component-scan base-package="com.pamnager.cn">
         <!--<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>-->
     </context:component-scan>
     <import resource="spring-mvc.xml"/>
+    <import resource="spring-datesource.xml"/>
+
+
 
 </beans>

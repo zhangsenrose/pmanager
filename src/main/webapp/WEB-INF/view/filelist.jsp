@@ -27,10 +27,8 @@
 <script type="text/javascript" src="resources/easyui/jquery.easyui.min.js"></script>
 <%--addFileDialog--%>
 <div id="dlg" class="easyui-dialog" closed="true" style="width:300px;height:200px" buttons="#dialog-buttons">
-    <form id="addfileform" method="post" enctype="multipart/form-data">
-        <div>
-            <input type="file" name="file">
-        </div>
+    <form id="addfileform"  enctype="multipart/form-data">
+        <input type="file" id="file" name="file">
     </form>
 </div>
 <div id="dialog-buttons">
@@ -45,11 +43,13 @@
         singleSelect:true,
         rownumbers:true,
         pagination:true,
-        url:'',
+        fit:true,
+        url:'file/filelist',
         columns:[[
-            {field:'Code', title:'Code', width:100},
-            {field: 'name', title: 'Name', width: 100},
-            {field:'price', title:'Price',width:100}
+            {field:'fileName', title:'fileName', width:100},
+            {field: 'fileSize', title: 'fileSize', width: 100},
+            {field:'fileExtension', title:'fileExtension',width:100},
+            {field:'fileUniqueName', title:'fileUniqueName',width:100}
         ]]
     });
     
@@ -61,7 +61,30 @@
         $("#dlg").dialog("close");
     }
     function addFile() {
-        
+        //上传文件
+        var data = new FormData()
+        data.append('file', $('#file')[0].files[0])
+        $.ajax('file/fileadd', {
+            method:'POST',
+            data: data,
+            processData:false,
+            contentType:false,
+            success:function (data) {
+                if (data.code == 200){
+                    //请求成功，弹出信息，然后自动关闭
+                    $.messager.alert('文件上传','上传成功', 'info',function () {
+                        $("#dlg").dialog("close");
+                        //重新加载 datag reload
+                        $('#dlg').datagrid('reload');
+                    })
+                }else{
+                    //弹出框，网络异常，请重试
+                }
+            }
+        })
+
+
+
     }
 </script>
 </html>
