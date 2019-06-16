@@ -13,8 +13,8 @@ public interface FileService {
 
     List<File> getAllFile();
 
-
-
     List<File> getFilesByPage(int current, int pageSize);
+
+    File saveFile(MultipartFile file);
 
 }

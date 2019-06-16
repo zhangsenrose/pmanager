@@ -4,6 +4,7 @@ import com.pamnager.cn.dao.FileMapper;
 import com.pamnager.cn.entity.File;
 import com.pamnager.cn.service.FileService;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -35,5 +36,10 @@ public class FileServiceImpl implements FileService {
     public List<File> getFilesByPage(int current, int pageSize) {
         System.out.println(current + "=========" + pageSize);
         return fileMapper.getFilesByPage(current, pageSize);
+    }
+
+    @Override
+    public File saveFile(MultipartFile file) {
+        return null;
     }
 }
