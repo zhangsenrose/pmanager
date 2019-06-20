@@ -97,7 +97,6 @@ public class FileController {
         if (StringUtils.isBlank(fileName)){
             return RespData.fail("文件名称不能为空");
         }
-
         if (!minioService.isDocExists(fileName, minioClientUtil.getMinioClient())){
             return RespData.fail("文件不存在");
         }

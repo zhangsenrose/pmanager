@@ -1,5 +1,6 @@
 package com.pamnager.cn.service;
 
+import com.pamnager.cn.vo.SearchRespVo;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
@@ -10,6 +11,11 @@ import org.springframework.web.multipart.MultipartFile;
 public interface ElasticSearchService {
 
     void saveDocs(MultipartFile file, String fileUniqueName);
+
+    //query方法
+    SearchRespVo queryByKey(String key);
+
+
 
 
 }

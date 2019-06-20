@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.pamnager.cn.common.ESTransportClient;
 import com.pamnager.cn.common.TikaUtil;
 import com.pamnager.cn.service.ElasticSearchService;
+import com.pamnager.cn.vo.SearchRespVo;
 import org.elasticsearch.action.index.IndexRequestBuilder;
 import org.elasticsearch.action.index.IndexResponse;
 import org.elasticsearch.client.transport.TransportClient;
@@ -37,9 +38,13 @@ public class ElasticSearchServiceImpl implements ElasticSearchService {
         jsonObject.put("fileContent", fileContent);
         requestBuilder.setSource(jsonObject, XContentType.JSON);
         IndexResponse response = requestBuilder.get();
+
     }
 
-
+    @Override
+    public SearchRespVo queryByKey(String key) {
+        return null;
+    }
 
 
 }

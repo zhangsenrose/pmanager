@@ -74,9 +74,8 @@
                     //请求成功，弹出信息，然后自动关闭
                     $.messager.alert('Successed','上传成功', 'info',function () {
                         $("#dlg").dialog("close");
-                        //重新加载 datag reload
-                        $('#dlg').datagrid('reload');
                     })
+                    $('#dlg').datagrid('reload');
                 }else if(data.code == 400){
                     $.messager.alert("Failed", data.message,function () {
                     })
